@@ -1,0 +1,10 @@
+.Rprofile
+^.*\.Rproj$
+^\.httr-oauth$
+^\.Rproj\.user$
+^\.travis\.yml$
+^cran-comments\.md$
+^data-raw$
+^LICENSE\.md$
+^README-.*\.png$
+^README\.Rmd$
