@@ -1,0 +1,54 @@
+# ~/.R/snippets/r.snippets
+
+snippet edit_snippets
+	usethis::edit_rstudio_snippets()
+
+snippet edit_renviron
+	usethis::edit_r_environ()
+
+snippet edit_rprofile
+	usethis::edit_r_profile()
+
+snippet tidy_description
+	usethis::use_tidy_description()
+	usethis::use_tidy_versions()
+
+snippet check_package_no_tests
+	devtools::check(args = "--no-tests")
+
+snippet install
+	pkgs = c(
+		"caret",
+		"devtools",
+		"furrr",
+		"glmnet",
+		"kableExtra",
+		"roxygen2",
+		"rmarkdown",
+		"shiny",
+		"shinyjs",
+		"spelling",
+		"styler",
+		"testthat",
+		"tidymodels",
+		"tidyverse",
+		"usethis"
+	)
+	lib = .libPaths()[1]
+	type = .Platform$pkgType
+	ava = available_packages(type = type)
+	ins = installed.packages(lib)
+	deps = tools::package_dependencies(pkgs, ava, recursive = TRUE)
+	pkgs = sort(unique(c(pkgs, unlist(deps))))
+	not_installed = !pkgs %in% rownames(ins)
+	out_of_date = pkgs %in% old.packages(lib, type = type, instPkgs = ins, available = ava)[,"Package"]
+	pkgs = pkgs[not_installed | out_of_date]
+	while(length(pkgs) > 0){
+		pkg = pkgs[1]
+		message(pkg)
+		suppressMessages(install.packages(pkg, lib = lib, type = type, quiet = TRUE))
+		ins = installed.packages(lib)
+		not_installed = !pkgs %in% rownames(ins)
+		out_of_date = pkgs %in% old.packages(lib, type = type, instPkgs = ins, available = ava)[,"Package"]
+		pkgs = pkgs[not_installed | out_of_date]
+	}
