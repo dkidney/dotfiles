@@ -1,0 +1,71 @@
+# repo -----------------------------------------------------------------------
+
+snippet edit_rprofile
+	usethis::edit_r_profile(scope = "user")
+
+snippet edit_renviron
+	usethis::edit_r_environ(scope = "user")
+
+snippet edit_snippets_cpp
+	usethis::edit_rstudio_snippets(type = "c_cpp")
+
+snippet edit_snippets_css
+	usethis::edit_rstudio_snippets(type = "css")
+
+snippet edit_snippets_html
+	usethis::edit_rstudio_snippets(type = "html")
+
+snippet edit_snippets_js
+	usethis::edit_rstudio_snippets(type = "javascript")
+
+snippet edit_snippets_md
+	usethis::edit_rstudio_snippets(type = "markdown")
+
+snippet edit_snippets_python
+	usethis::edit_rstudio_snippets(type = "python")
+
+snippet edit_snippets_r
+	usethis::edit_rstudio_snippets(type = "R")
+
+snippet edit_snippets_sql
+	usethis::edit_rstudio_snippets(type = "sql")
+
+snippet edit_snippets_stan
+	usethis::edit_rstudio_snippets(type = "stan")
+
+snippet edit_snippets_tex
+	usethis::edit_rstudio_snippets(type = "tex")
+
+snippet tidy_description
+	usethis::use_tidy_description()
+	usethis::use_tidy_versions(overwrite = FALSE, source = "local")
+
+snippet check_package_no_tests
+	devtools::check(args = "--no-tests")
+
+snippet library_favourites
+	suppressPackageStartupMessages({
+		library(fs)
+		library(magrittr)
+		library(tidyverse)
+	})
+
+snippet install_first
+	pkgs = c(
+		"devtools",
+		"roxygen2",
+		"tidyverse",
+		"usethis",
+		"kableExtra",
+		"shiny",
+		"shinyjs",
+		"tidymodels",
+		character(0)
+	)
+	for(pkg in pkgs){
+		if(!pkg %in% rownames(installed.packages(.libPaths()[1]))){
+			message(pkg)
+			install.packages(pkg, .libPaths()[1], quiet = TRUE)
+		}
+	}
+
