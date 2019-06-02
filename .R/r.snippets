@@ -1,4 +1,4 @@
-# repo -----------------------------------------------------------------------
+# custom ----------------------------------------------------------------------------
 
 snippet edit_rprofile
 	usethis::edit_r_profile(scope = "user")
@@ -69,3 +69,67 @@ snippet install_first
 		}
 	}
 
+snippet roxy_skeleton
+	# @rdname TODO
+	# @name ${1:function_name}
+	#' @title TODO
+	#' @description TODO
+	#' @param x [TODO] TODO
+	# @details TODO
+	# @importFrom TODO TODO
+	# @export
+	# @example inst/examples/example-${1:function_name}.R
+	#' @examples
+	#' \dontrun{
+	#'
+	#' # TODO
+	#' }
+
+snippet roxy_describe
+	#' \describe{
+	#'   \item{one}{
+	#'     asdf
+	#'   }
+	#'   \item{two}{
+	#'     asdf
+	#'   }
+	#' }
+
+snippet roxy_itemize
+	#' \itemize{
+	#'   \item First item
+	#'   \item Second item
+	#' }
+
+snippet roxy_enumerate
+	#' \enumerate{
+	#'   \item First item
+	#'   \item Second item
+	#' }
+
+snippet roxy_table2
+	#' \tabular{ll}{
+	#'   \strong{asdf} \tab \strong{asdf} \cr
+	#'   asdf \tab asdf \cr
+	#' }
+
+snippet roxy_table3
+	#' \tabular{lll}{
+	#'   \strong{asdf} \tab \strong{asdf} \tab \strong{asdf} \cr
+	#'   asdf \tab asdf \tab asdf \cr
+	#' }
+
+snippet bootstrap_red
+	"#d9534f"
+
+snippet bootstrap_white
+	"#f9f9f9"
+
+snippet bootstrap_lightblue
+	"#5bc0de"
+
+snippet bootstrap_green
+	"#5cb85c"
+
+snippet bootstrap_blue
+	"#428bca"
