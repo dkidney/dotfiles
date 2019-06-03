@@ -1,24 +1,23 @@
 
 # env vars -----
-# Sys.setenv("HOME" = "/Users/darrenkidney")
 
 # general -----
 options(
-    
+
     # > warnings & errors -----
     # check.bounds = TRUE,           # [FALSE] if true, warning produced e.g. when x <- 1:3; x[5] <- 6.
     warn = 1,                      # [] warnings: >=2 = as errors, 1 = as they occur, 0 = after function returns, -ve = ignore
     warnPartialMatchAttr   = TRUE, # [FALSE] if true, warns if partial matching is used in argument matching
     warnPartialMatchDollar = TRUE, # [FALSE] if true, warns if partial matching is used in extracting attributes via attr
     # warnPartialMatchArgs   = TRUE, # [FALSE] if true, causes annoying warnings that crash package install and restart: Warning in seq.default(along = x) : partial argument match of 'along' to 'along.with'
-    
+
     # > printing -----
     digits = 7,       # [7] controls the number of significant digits to print (1 to 22)
     max.print = 1000, # [99999] limit the amount of information that is printed
-    papersize = "a4", 
+    papersize = "a4",
     # scipen = 0,       # [0] don't use in .Rprofile as affects coercion of numeric to character
     width = 100       # [80] console width
-    
+
 )
 
 # dplyr -----
@@ -74,9 +73,9 @@ options(
 # shiny.launch.browser
 
 # stats -----
-options(
-    # na.action = na.omit # [na.omit] can also have na.fail na.pass
-)
+# options(
+#     na.action = na.omit # [na.omit] can also have na.fail na.pass
+# )
 
 # tibble -----
 options(
@@ -102,10 +101,9 @@ options(
 options(
     install.packages.check.source = "yes", # ["yes"] "yes" or "no"
     install.packages.compile.from.source = "interactive", # ["interactive"] "interactive", "never" or "always"
-    pkgType = .Platform$pkgType, 
-    repos = c(CRAN = "https://cran.rstudio.com") 
+    pkgType = .Platform$pkgType,
+    repos = c(CRAN = "https://cran.rstudio.com")
 )
-
 
 # tz -----
 if(Sys.getenv("TZ") == "") Sys.setenv("TZ" = Sys.timezone())
