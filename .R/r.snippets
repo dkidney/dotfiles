@@ -133,7 +133,7 @@ snippet edit_snippets_js
 snippet edit_snippets_md
 	usethis::edit_rstudio_snippets(type = "markdown")
 
-snippet edit_snippets_python
+snippet edit_snippets_py
 	usethis::edit_rstudio_snippets(type = "python")
 
 snippet edit_snippets_r
@@ -244,3 +244,5 @@ snippet bootstrap_colours
 		bootstrap_button_orange 	= "#f0ad4e"
 	)
 
+snippet active_dir
+	fs::path_dir(rstudioapi::getActiveDocumentContext()$path)
