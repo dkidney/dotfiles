@@ -190,7 +190,7 @@ snippet roxy_skeleton
 	# @details TODO
 	# @importFrom TODO TODO
 	# @export
-	# @example inst/examples/example-${1:function_name}.R
+	# @example inst/examples/examples-${1:function_name}.R
 	#' @examples
 	#' \dontrun{
 	#'
@@ -246,3 +246,14 @@ snippet bootstrap_colours
 
 snippet active_dir
 	fs::path_dir(rstudioapi::getActiveDocumentContext()$path)
+
+snippet symbols
+	clisymbols::symbol %>% {
+		tibble(
+			symbol = unlist(.),
+			name = names(.),
+			unicode = purrr::map_chr(., stringi::stri_escape_unicode)
+		)
+	} %>% 
+		print.data.frame(row.names = FALSE)
+
