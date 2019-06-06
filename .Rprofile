@@ -33,7 +33,7 @@ options(
 options(
     knitr.table.format = "html", # [] so that default kable output is html
     knitr.kable.NA = ''          # [] to hide NA values
-    # knitr.graphics.auto_pdf
+    # knitr.graphics.auto_pdf # latex only, used in knitr::include_graphics
     # knitr.purl.inline
     # knitr.bib.prefix
     # knitr.package.foo
@@ -114,6 +114,7 @@ if(interactive()){
 
 # user ----
 if(interactive()){
+    message(utils::sessionInfo()[[4]])
     message(Sys.info()["user"])
 }
 
@@ -128,7 +129,7 @@ if(interactive()){
 # pkg updates -----
 if(interactive()){
     if(requireNamespace("oddments", quietly = TRUE)){
-        try(print(oddments::pkg_updates()), TRUE)
+        try(oddments::pkg_updates(), TRUE)
     }else{
         suppressMessages({
             if(requireNamespace("tidyverse", quietly = TRUE)){
