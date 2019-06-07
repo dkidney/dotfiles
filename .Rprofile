@@ -112,7 +112,7 @@ if(interactive()){
     message(format(Sys.time(), tz = Sys.getenv("TZ"), usetz = TRUE))
 }
 
-# user ----
+# system & user ----
 if(interactive()){
     message(utils::sessionInfo()[[4]])
     message(Sys.info()["user"])
@@ -138,3 +138,7 @@ if(interactive()){
         })
     }
 }
+
+# images -----
+writeLines(readLines("~/.Rprofile_image.txt"))
+
