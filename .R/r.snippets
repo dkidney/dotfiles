@@ -231,7 +231,7 @@ snippet roxy_table3
 	#'   asdf \tab asdf \tab asdf \cr
 	#' }
 
-snippet bootstrap_colours
+snippet cols_bootstrap
 	list(
 		bootstrap_blue             = "#428bca",
 		bootstrap_green            = "#5cb85c",
@@ -257,3 +257,14 @@ snippet symbols
 	} %>% 
 		print.data.frame(row.names = FALSE)
 
+snippet tick
+	writeLines(cli::col_green("\u2714"))
+	
+snippet cross
+	writeLines(cli::col_red("\u2716"))
+	
+snippet yymmdd
+	yymmdd = format(Sys.Date(), "%y%m%d")
+	
+snippet yyyymmdd
+	yyyymmdd = format(Sys.Date(), "%Y%m%d")
