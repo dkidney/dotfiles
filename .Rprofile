@@ -140,5 +140,9 @@ if(interactive()){
 }
 
 # images -----
-writeLines(readLines("~/.Rprofile_image.txt"))
+if(interactive()){
+    try(suppressWarnings({
+        writeLines(readLines("~/.Rprofile_image.txt"))
+    }), TRUE)
+}
 
