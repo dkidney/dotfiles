@@ -139,10 +139,10 @@ if(interactive()){
     }
 }
 
-# images -----
-if(interactive()){
-    try(suppressWarnings({
-        writeLines(readLines("~/.Rprofile_image.txt"))
-    }), TRUE)
-}
+# messges -----
+# if(interactive()){
+#     try(suppressWarnings({
+#         writeLines(readLines("~/.Rprofile_image.txt"))
+#     }), TRUE)
+# }
 
