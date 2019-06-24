@@ -30,4 +30,12 @@ snippet s*
 snippet create_table
 	create or replace transient table ${1:db_name}.public.${2:table_name} as
 
+snippet rename_table
+	alter table ${1:db_name}.public.${2:old_table_name}
+	rename to ${1:db_name}.public."${3:new_table_name}";
+	
+snippet rename_column
+	alter table ${1:db_name}.public.${2:table_name}
+	rename column "${3:old_column_name}" to "${4:new_column_name}";
+
 
