@@ -25,6 +25,11 @@ options(
     dplyr.show_progress = TRUE  # [] should lengthy operations such as do() show a progress bar?
 )
 
+# DT -----
+options(
+  DT.options = list()
+)
+
 # ggplot2 -----
 # ggplot2.continuous.col
 # ggplot2.continuous.fill
@@ -62,7 +67,7 @@ options(
 # readr.show_progress
 
 # reticulate -----
-if ("reticulate" %in% rownames(installed.packages())) {
+if ("reticulate" %in% rownames(utils::installed.packages())) {
     reticulate::use_condaenv(condaenv = 'dev3', required = TRUE)
 }
 # reticulate.repl.hook
