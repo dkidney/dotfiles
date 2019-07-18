@@ -59,6 +59,7 @@ pkgs <- c(
   "rsample",
   "rstudioapi",
   "rvest",
+  "sf",
   "sp",
   "spelling",
   "stringr",
