@@ -62,6 +62,9 @@ options(
 # readr.show_progress
 
 # reticulate -----
+if ("reticulate" %in% rownames(installed.packages())) {
+    reticulate::use_condaenv(condaenv = 'dev3', required = TRUE)
+}
 # reticulate.repl.hook
 # reticulate.repl.initialize
 # reticulate.repl.teardown
@@ -93,7 +96,7 @@ options(
         License = "MIT + file LICENSE",
         Version = "0.0.0.9000"
     ),
-    usethis.protocol  = "https"
+    usethis.protocol = "https"
     # usethis.quiet
 )
 
@@ -106,40 +109,40 @@ options(
 )
 
 # tz -----
-if(Sys.getenv("TZ") == "") Sys.setenv("TZ" = Sys.timezone())
-if(Sys.getenv("TZ") == "") Sys.setenv("TZ" = "Europe/London")
-if(interactive()){
-    message(format(Sys.time(), tz = Sys.getenv("TZ"), usetz = TRUE))
+if (Sys.getenv("TZ") == "") Sys.setenv("TZ" = Sys.timezone())
+if (Sys.getenv("TZ") == "") Sys.setenv("TZ" = "Europe/London")
+if (interactive()) {
+  message(format(Sys.time(), tz = Sys.getenv("TZ"), usetz = TRUE))
 }
 
 # system & user ----
-if(interactive()){
-    message(utils::sessionInfo()[[4]])
-    message(Sys.info()["user"])
+if (interactive()) {
+  message(utils::sessionInfo()[[4]])
+  message(Sys.info()["user"])
 }
 
 # r version -----
-if(interactive()){
-    if(requireNamespace("oddments", quietly = TRUE)){
-        try(oddments::check_r_version(check_for_updates = FALSE), TRUE)
-        try(oddments::check_rstudio_version(check_for_updates = FALSE), TRUE)
-    }
+if (interactive()) {
+  if (requireNamespace("oddments", quietly = TRUE)) {
+    try(oddments::check_r_version(check_for_updates = FALSE), TRUE)
+    try(oddments::check_rstudio_version(check_for_updates = FALSE), TRUE)
+  }
 }
 
 # pkg updates -----
-if(interactive()){
-    if(requireNamespace("oddments", quietly = TRUE)){
-        try(oddments::pkg_updates(), TRUE)
-    }else{
-        suppressMessages({
-            if(requireNamespace("tidyverse", quietly = TRUE)){
-                tidyverse::tidyverse_update()
-            }
-        })
-    }
+if (interactive()) {
+  if (requireNamespace("oddments", quietly = TRUE)) {
+    try(oddments::pkg_updates(), TRUE)
+  } else {
+    suppressMessages({
+      if (requireNamespace("tidyverse", quietly = TRUE)) {
+        tidyverse::tidyverse_update()
+      }
+    })
+  }
 }
 
-# messges -----
+# welcome -----
 # if(interactive()){
 #     try(suppressWarnings({
 #         writeLines(readLines("~/.Rprofile_image.txt"))
