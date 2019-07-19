@@ -2,6 +2,7 @@ pkgs <- c(
   "aws.ec2",
   "aws.ec2metadata",
   "aws.s3",
+  "binom",
   "broom",
   "caret",
   "cli",
@@ -15,6 +16,7 @@ pkgs <- c(
   "feather",
   "forcats",
   "furrr",
+  "future",
   "gbm",
   "ggplot2",
   "ggmap",
@@ -44,6 +46,7 @@ pkgs <- c(
   "pROC",
   "purrr",
   "randomForest",
+  "raster",
   "Rcpp",
   "readr",
   "readxl",
@@ -81,12 +84,16 @@ pkgs <- c(
 not_installed <- setdiff(pkgs, rownames(installed.packages()))
 writeLines(not_installed)
 
-not_available <- setdiff(not_installed, rownames(available.packages()))
-writeLines(not_available)
-
-available <- setdiff(not_installed, not_available)
-writeLines(available)
-
-if (0) install.packages(available)
-
-if (0) devtools::install_github("cloudyr/aws.ec2")
+if (length(not_installed) > 0) {
+  
+  not_available <- setdiff(not_installed, rownames(available.packages()))
+  writeLines(not_available)
+  
+  available <- setdiff(not_installed, not_available)
+  writeLines(available)
+  
+  if (0) install.packages(available)
+  
+  if (0) devtools::install_github("cloudyr/aws.ec2")
+  
+}
