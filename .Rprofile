@@ -68,7 +68,8 @@ options(
 
 # reticulate -----
 if ("reticulate" %in% rownames(utils::installed.packages())) {
-    reticulate::use_condaenv(condaenv = 'dev3', required = TRUE)
+  # reticulate::use_condaenv(condaenv = 'py27', required = TRUE)
+  reticulate::use_python(python = "/usr/local/anaconda3/envs/py27/bin/python", required = TRUE)
 }
 # reticulate.repl.hook
 # reticulate.repl.initialize
