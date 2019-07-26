@@ -76,6 +76,7 @@ pkgs <- c(
   "tidyselect",
   "tidytext",
   "tidyverse",
+  "viridis",
   "xml2",
   "yardstick",
   character(0)
