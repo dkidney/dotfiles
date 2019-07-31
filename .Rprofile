@@ -68,7 +68,7 @@ options(
 
 # reticulate -----
 if ("reticulate" %in% rownames(utils::installed.packages())) {
-  reticulate::use_python(python = "/usr/local/anaconda3/envs/py3/bin/python", required = TRUE)
+    try(reticulate::use_python("/usr/local/anaconda3/envs/py3/bin/python", required = TRUE))
 }
 # reticulate.repl.hook
 # reticulate.repl.initialize
@@ -129,8 +129,8 @@ if (interactive()) {
 # r version -----
 if (interactive()) {
   if (requireNamespace("oddments", quietly = TRUE)) {
-    try(oddments::check_r_version(check_for_updates = FALSE), TRUE)
-    try(oddments::check_rstudio_version(check_for_updates = FALSE), TRUE)
+    try(oddments::check_r_version(check_for_updates = TRUE), TRUE)
+    # try(oddments::check_rstudio_version(check_for_updates = FALSE), TRUE)
   }
 }
 
