@@ -13,6 +13,7 @@ pkgs <- c(
   "devtools",
   "dials",
   "dplyr",
+  "dplyr.snowflakedb",
   "feather",
   "forcats",
   "furrr",
@@ -97,4 +98,6 @@ if (length(not_installed) > 0) {
   
   if (0) devtools::install_github("cloudyr/aws.ec2")
   
+  if (0) devtools::install_github("snowflakedb/dplyr-snowflakedb")
+
 }
