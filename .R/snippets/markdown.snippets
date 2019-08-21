@@ -22,70 +22,26 @@ snippet rcpp
 
 # need to type snippet name in full and then use SHIFT + TAB
 
-snippet cat_file
-	```{r, eval=FALSE, code=readLines("~/.Rprofile")}
-	```
+snippet br
+	<br>
 
-snippet hrule
+snippet hr
 	*********************************************************************
 
-snippet image
+snippet cat_file
+	```{r, code=readLines("~/.Rprofile"), eval=FALSE}
+	```
+
+snippet img
 	![alt text](figures/img.png)
 
-snippet knitr_setup
-	```{r knitr_setup, include=FALSE}
-	knitr::opts_chunk$set(
-		comment = "##",
-		echo = TRUE,
-		eval = TRUE,
-		dev = "png",
-		dev.args = list(
-			family = "Avenir",
-			pointsize = 11
-		),
-		fig.align = "center",
-		fig.asp = 1 / ((1 + sqrt(5)) / 2), # golden ratio
-		fig.path = "figures/fig_",
-		fig.show = "hold",
-		fig.width = 6,
-		message = FALSE,
-		out.width = "75%",
-		warning = FALSE
-	)
-
-snippet python_setup
-	```{r python_setup, include=FALSE}
-	library(reticulate)
-	knitr::opts_chunk$set(
-	    engine.path = "/usr/local/Cellar/python3/3.7.0/bin/python3",
-	    python.reticulate = TRUE
-	)
-	use_python(knitr::opts_chunk$get("engine.path"))
-	```
-
-snippet r_setup
-	```{r r_setup, include=FALSE}
-	suppressPackageStartupMessages({
-	    library(fs)
-	    library(magrittr)
-	    library(tidyverse)
-	})
-	theme_set(
-		theme_minimal(
-			base_family = knitr::opts_chunk$get("dev.args")$family,
-			base_size = knitr::opts_chunk$get("dev.args")$pointsize,
-			base_line_size = 0.5
-		)
-	)
-	```
-
-snippet table2
+snippet tab2
 	asdf | asdf
 	------------- | -------------
 	asdf | asdf
 	asdf | asdf
 
-snippet table3
+snippet tab3
 	asfd  | asdf | asdf
 	------------- | ------------- | -------------
 	asdf | asdf | asdf
@@ -94,9 +50,9 @@ snippet table3
 snippet url
 	[linked phrase](http://example.com)
 
-snippet section
+snippet sec
 	# section {#section}
 
-snippet section_link
+snippet link
 	[section](#section)
 
