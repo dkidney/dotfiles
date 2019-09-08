@@ -54,6 +54,11 @@ options(
     mc.cores = parallel::detectCores() - 1
 )
 
+# python -----
+
+# https://docs.python.org/3/using/cmdline.html#envvar-PYTHONHOME
+# Sys.setenv(PYTHONPATH = "/usr/local/anaconda3/envs/py3/bin/python")
+
 # pillar -----
 options(
     pillar.bold = FALSE,        # [] bold font, e.g. for column headers?
@@ -67,9 +72,7 @@ options(
 # readr.show_progress
 
 # reticulate -----
-if ("reticulate" %in% rownames(utils::installed.packages())) {
-    try(reticulate::use_python("/usr/local/anaconda3/envs/py3/bin/python", required = TRUE))
-}
+Sys.setenv(RETICULATE_PYTHON = "/usr/local/anaconda3/envs/py3/bin/python") # for reticulate::py_discover_config()
 # reticulate.repl.hook
 # reticulate.repl.initialize
 # reticulate.repl.teardown
