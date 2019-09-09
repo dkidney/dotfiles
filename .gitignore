@@ -1,10 +1,30 @@
+# mac os
 .DS_Store
+
+# oauth2 token
 .httr-oauth
+
+# compiled code
+src/*.dll
+src/*.o
+src/*.so
+
+# R
 .RData
 .Rhistory
 .Rproj.user
 .Ruserdata
 *.Rproj
-src/*.dll
-src/*.o
-src/*.so
+
+# rmarkdown / knitr
+*_cache/
+unnamed-chunk*
+
+# python
+.ipynb_checkpoints/*
+*.pyc
+
+# misc
+Untitled*
+wip_*/*
+
