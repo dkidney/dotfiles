@@ -3,6 +3,7 @@ pkgs <- c(
   "aws.ec2metadata",
   "aws.s3",
   "binom",
+  "blogdown",
   "broom",
   "caret",
   "cli",
@@ -22,6 +23,7 @@ pkgs <- c(
   "ggplot2",
   "ggmap",
   "glmnet",
+  "gridExtra",
   "haven",
   "hms",
   "httr",
@@ -87,17 +89,17 @@ not_installed <- setdiff(pkgs, rownames(installed.packages()))
 writeLines(not_installed)
 
 if (length(not_installed) > 0) {
-  
+
   not_available <- setdiff(not_installed, rownames(available.packages()))
   writeLines(not_available)
-  
+
   available <- setdiff(not_installed, not_available)
   writeLines(available)
-  
+
   if (0) install.packages(available)
-  
+
   if (0) devtools::install_github("cloudyr/aws.ec2")
-  
+
   if (0) devtools::install_github("snowflakedb/dplyr-snowflakedb")
 
 }
