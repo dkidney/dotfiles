@@ -8,7 +8,7 @@
 .Rhistory
 .Rapp.history
 # session files
-.RData
+.RData 
 # user files
 .Ruserdata
 # output files from build
@@ -33,10 +33,16 @@ vignettes/*.pdf
 # python -----
 
 .ipynb_checkpoints/*
-*.pyc
+#*.pyc
+#*.pyo
+*.py[co]
+#.idea
+**/.idea/**
+**/__pychache__/**
 
 # misc -----
 
+**/Readme_cache/**
 src/*.dll
 src/*.o
 src/*.so
